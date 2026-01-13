@@ -9,17 +9,22 @@ body {
     line-height: 1.6;
     color: #1a1a1a;
     background: #fff;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 60px 30px;
 }
 
+header {
+    text-align: center;
+    margin-bottom: 80px;
+}
+
 h1 {
-    font-size: 48px;
+    font-size: 56px;
     font-weight: 700;
     margin-bottom: 10px;
 }
@@ -27,93 +32,279 @@ h1 {
 .subtitle {
     font-size: 20px;
     color: #666;
-    margin-bottom: 60px;
 }
 
-h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin: 60px 0 30px;
+/* Interactive Timeline */
+.timeline {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 60px 0 100px;
+    margin-bottom: 80px;
 }
 
-section {
-    margin-bottom: 60px;
+.timeline-line {
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    right: 50px;
+    height: 4px;
+    background: linear-gradient(90deg, #552583, #7c4ca5);
 }
 
-/* Principles */
-.principle {
-    background: #f5f5f5;
-    padding: 30px;
-    border-radius: 8px;
-    margin-bottom: 30px;
-    border-left: 4px solid #552583;
+.company-node {
+    position: relative;
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 10;
 }
 
-.principle h2 {
-    font-size: 22px;
-    margin: 0 0 15px;
+.company-node:hover {
+    transform: translateY(-10px);
 }
 
-.description {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.example {
+.company-logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
     background: white;
-    padding: 20px;
-    border-radius: 6px;
-    border: 1px solid #e0e0e0;
+    border: 4px solid #552583;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(85, 37, 131, 0.2);
+    transition: all 0.3s ease;
 }
 
-.example strong {
-    color: #552583;
+.company-node:hover .company-logo {
+    border-color: #7c4ca5;
+    box-shadow: 0 8px 25px rgba(85, 37, 131, 0.4);
 }
 
-/* Timeline */
-.job {
-    margin-bottom: 40px;
-    padding-bottom: 40px;
-    border-bottom: 1px solid #e0e0e0;
+.company-logo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
 }
 
-.job:last-child {
-    border-bottom: none;
-}
-
-.job h3 {
-    font-size: 24px;
-    font-weight: 700;
+.company-name {
+    display: block;
+    font-weight: 600;
     margin-bottom: 5px;
+    font-size: 14px;
 }
 
-.job h3 span {
-    font-size: 16px;
-    font-weight: 400;
+.year {
+    display: block;
+    font-size: 12px;
     color: #666;
-    float: right;
 }
 
-.role {
-    color: #552583;
-    font-weight: 500;
-    margin-bottom: 10px;
-}
-
-/* Full doc */
-.full-doc {
+/* Detail Panel */
+.detail-panel {
+    display: none;
     background: #f5f5f5;
+    border-radius: 12px;
     padding: 40px;
-    border-radius: 8px;
+    margin-bottom: 80px;
+    position: relative;
+    animation: slideDown 0.4s ease;
 }
 
-.full-doc p {
+.detail-panel.active {
+    display: block;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+    padding: 5px 10px;
+}
+
+.close-btn:hover {
+    color: #552583;
+}
+
+#detailContent h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: #552583;
+}
+
+#detailContent h3 {
+    font-size: 20px;
+    margin: 30px 0 15px;
+    color: #552583;
+}
+
+#detailContent p {
+    margin-bottom: 15px;
+}
+
+#detailContent ul {
+    list-style-position: inside;
     margin-bottom: 20px;
 }
 
-@media (max-width: 700px) {
-    .container { padding: 40px 20px; }
-    h1 { font-size: 36px; }
-    .principle { padding: 20px; }
-    .job h3 span { float: none; display: block; margin-top: 5px; }
+#detailContent ul li {
+    margin-bottom: 8px;
+}
+
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.project-images img {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* Philosophy Section */
+.philosophy-section {
+    margin-top: 100px;
+    padding-top: 60px;
+    border-top: 2px solid #e0e0e0;
+}
+
+.toggle-tabs {
+    display: flex;
+    gap: 0;
+    margin-bottom: 40px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.tab-btn {
+    flex: 1;
+    padding: 20px 30px;
+    background: none;
+    border: none;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #666;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.tab-btn:hover {
+    color: #552583;
+}
+
+.tab-btn.active {
+    color: #552583;
+}
+
+.tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: #552583;
+}
+
+.tab-content {
+    display: none;
+    animation: fadeIn 0.4s ease;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.tab-content h3 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: #552583;
+}
+
+.tab-content h4 {
+    font-size: 22px;
+    margin: 30px 0 15px;
+    color: #552583;
+}
+
+.tab-content ol,
+.tab-content ul {
+    padding-left: 0;
+    list-style-position: outside;
+    margin-left: 25px;
+}
+
+.tab-content li {
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.tab-content strong {
+    color: #552583;
+}
+
+.expectations {
+    list-style-type: disc;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .timeline {
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+    }
+    
+    .timeline-line {
+        display: none;
+    }
+    
+    .company-node {
+        width: 100%;
+    }
+    
+    h1 {
+        font-size: 40px;
+    }
+    
+    .toggle-tabs {
+        flex-direction: column;
+    }
+    
+    .tab-btn {
+        border-bottom: 1px solid #e0e0e0;
+    }
+    
+    .detail-panel {
+        padding: 30px 20px;
+    }
 }
