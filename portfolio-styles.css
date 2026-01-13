@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fff;
+    font-size: 18px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 60px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin: 60px 0 30px;
+}
+
+section {
+    margin-bottom: 60px;
+}
+
+/* Principles */
+.principle {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border-left: 4px solid #552583;
+}
+
+.principle h2 {
+    font-size: 22px;
+    margin: 0 0 15px;
+}
+
+.description {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.example {
+    background: white;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.example strong {
+    color: #552583;
+}
+
+/* Timeline */
+.job {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.job:last-child {
+    border-bottom: none;
+}
+
+.job h3 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.job h3 span {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+    float: right;
+}
+
+.role {
+    color: #552583;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Full doc */
+.full-doc {
+    background: #f5f5f5;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+.full-doc p {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 700px) {
+    .container { padding: 40px 20px; }
+    h1 { font-size: 36px; }
+    .principle { padding: 20px; }
+    .job h3 span { float: none; display: block; margin-top: 5px; }
+}

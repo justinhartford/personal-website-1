@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Justin Hartford</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <img src="profile-photo.jpg" alt="Justin Hartford" class="profile-photo" id="profileImg">
+        
+        <h1>Justin Hartford</h1>
+        
+        <p class="tagline">Growth Lead, ABM at Spring Health</p>
+        
+        <p class="bio">I build marketing systems that compound, not campaigns that spike. Currently leading ABM and Field Marketing at Spring Health. Previously at Grammarly, CFI, Amperity, and Pushpay. I write about B2B marketing and occasionally the Lakers.</p>
+
+        <h2>Newsletter</h2>
+        <p>Thoughts on B2B marketing, growth systems, and what actually works.</p>
+        
+        <div class="substack-embed">
+            <iframe src="https://justinhartford.substack.com/embed" width="100%" height="320" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
+        </div>
+
+        <h2>Contact</h2>
+        <p class="links">
+            <a href="https://www.linkedin.com/in/justin-hartford/" target="_blank">LinkedIn</a> · 
+            <a href="https://twitter.com/hartfordjustin" target="_blank">X</a> · 
+            <a href="https://www.instagram.com/hartfordjustin/" target="_blank">Instagram</a> · 
+            <a href="https://substack.com/@justinhartford" target="_blank">Substack</a>
+        </p>
+
+        <footer>
+            <p>Made with <a href="https://claude.ai" target="_blank">Claude</a> <span class="easter-egg" id="basketball">🏀</span></p>
+        </footer>
+    </div>
+
+    <script>
+        // Handle missing profile image
+        const img = document.getElementById('profileImg');
+        if (img) {
+            img.addEventListener('error', function() {
+                this.style.display = 'none';
+            });
+        }
+
+        // NBA JAM MODE EASTER EGG
+        const basketball = document.getElementById('basketball');
+        let jamMode = false;
+
+        if (basketball) {
+            basketball.style.cursor = 'pointer';
+            basketball.addEventListener('click', function() {
+                jamMode = !jamMode;
+                document.body.classList.toggle('jam-mode');
+                
+                if (jamMode) {
+                    const boom = document.createElement('div');
+                    boom.className = 'boom';
+                    boom.textContent = 'BOOMSHAKALAKA!';
+                    document.body.appendChild(boom);
+                    setTimeout(() => boom.remove(), 2000);
+                }
+            });
+        }
+    </script>
+</body>
+</html>

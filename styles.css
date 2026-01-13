@@ -1,0 +1,184 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fff;
+    font-size: 18px;
+    transition: all 0.5s ease;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding: 60px 30px;
+}
+
+.profile-photo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 30px;
+    object-fit: cover;
+}
+
+h1 {
+    font-size: 48px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.tagline {
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.bio {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 50px 0 15px;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+a {
+    color: #552583;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.2s;
+}
+
+a:hover {
+    border-bottom: 1px solid #552583;
+}
+
+.substack-embed {
+    margin: 30px 0;
+}
+
+footer {
+    margin-top: 80px;
+    text-align: center;
+    padding-top: 40px;
+    border-top: 1px solid #eee;
+    color: #888;
+    font-size: 14px;
+}
+
+.easter-egg {
+    cursor: pointer;
+    display: inline-block;
+    transition: transform 0.2s;
+    font-size: 20px;
+}
+
+.easter-egg:hover {
+    transform: scale(1.3) rotate(15deg);
+}
+
+/* NBA JAM MODE */
+body.jam-mode {
+    background: linear-gradient(135deg, #FF6B00, #FF0000, #8B0000);
+    background-size: 200% 200%;
+    animation: gradient 3s ease infinite;
+}
+
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body.jam-mode .container {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.8);
+    border: 3px solid #FFD700;
+}
+
+body.jam-mode h1 {
+    color: #FFD700;
+    text-shadow: 3px 3px #FF0000, 6px 6px #000;
+    font-family: Impact, Arial Black, sans-serif;
+    letter-spacing: 3px;
+}
+
+body.jam-mode .tagline,
+body.jam-mode .bio,
+body.jam-mode p {
+    color: #fff;
+    text-shadow: 2px 2px rgba(0, 0, 0, 0.8);
+}
+
+body.jam-mode h2 {
+    color: #FFD700;
+    text-shadow: 2px 2px #FF0000;
+    font-family: Impact, Arial Black, sans-serif;
+}
+
+body.jam-mode a {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+body.jam-mode a:hover {
+    color: #FF6B00;
+    text-shadow: 0 0 10px #FFD700;
+}
+
+body.jam-mode .profile-photo {
+    border: 4px solid #FFD700;
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.8);
+    animation: glow 2s infinite;
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+    50% { box-shadow: 0 0 50px rgba(255, 107, 0, 1); }
+}
+
+.boom {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 64px;
+    font-weight: bold;
+    color: #FFD700;
+    text-shadow: 4px 4px #FF0000, 8px 8px #000;
+    font-family: Impact, Arial Black, sans-serif;
+    z-index: 9999;
+    animation: boom-pop 2s forwards;
+}
+
+@keyframes boom-pop {
+    0% { transform: translate(-50%, -50%) scale(0); opacity: 0; }
+    10% { transform: translate(-50%, -50%) scale(1.2); opacity: 1; }
+    90% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
+    100% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
+}
+
+@media (max-width: 700px) {
+    .container { padding: 40px 20px; }
+    h1 { font-size: 36px; }
+    .bio { font-size: 18px; }
+    .profile-photo { width: 150px; height: 150px; }
+}
